@@ -1,64 +1,124 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - Tên của bạn</title>
+
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./components/drag_side_bar/drag-nav.css">
 </head>
+
 <body>
-  <!-- Header -->
-  <header>
-    <nav>
-      <h1>Portfolio</h1>
-      <ul>
-        <li><a href="#about">Giới thiệu</a></li>
-        <li><a href="#projects">Dự án</a></li>
-        <li><a href="#skills">Kỹ năng</a></li>
-        <li><a href="#contact">Liên hệ</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- About -->
-  <section id="about">
-    <h2>Giới thiệu</h2>
-    <p>Tôi là Front-end Developer, yêu thích xây dựng giao diện đẹp và tối ưu trải nghiệm người dùng.</p>
-  </section>
+  <!-- DRAG NAV (GIỮ NGUYÊN) -->
+  <div class="drag-nav drag-nav--light" data-target="#main">
+    <div class="drag-nav__item" data-section="hero">Hero</div>
+    <div class="drag-nav__item" data-section="about">About</div>
+    <div class="drag-nav__item" data-section="projects">Projects</div>
+    <div class="drag-nav__item" data-section="skills">Skills</div>
+    <div class="drag-nav__item" data-section="education">Education</div>
+    <div class="drag-nav__item" data-section="contact">Contact</div>
+  </div>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Dự án</h2>
-    <div class="project-card">
-      <h3>Crypto Visualizer</h3>
-      <p>Ứng dụng trực quan hóa dữ liệu tiền điện tử bằng biểu đồ.</p>
+  <div class="drag-nav__trigger"></div>
+  <div class="drag-nav__hint">Drag or click to navigate</div>
+
+  <!-- MAIN -->
+  <main id="main">
+    <div class="content-wrapper">
+      <!-- HERO -->
+      <section id="hero" class="section hero">
+        <div class="container">
+          <div class="hero__content">
+            <h1>Tên của bạn</h1>
+            <p>Front-end Developer chuyên về React & UI/UX</p>
+            <a href="#contact" class="btn">Liên hệ</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="container grid grid-1-2">
+          <div class="about__image">
+            <img src="avatar.jpg" alt="Profile">
+          </div>
+
+          <div>
+            <h2>About Me</h2>
+            <p>
+              Tôi là Front-end Developer với kinh nghiệm xây dựng giao diện hiện đại,
+              tối ưu hiệu năng và trải nghiệm người dùng.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <div class="container">
+          <h2>Dự án</h2>
+
+          <!-- Wrapper để sau này gắn carousel -->
+          <div class="projects__wrapper">
+
+            <div class="project-card">
+              <h3>Crypto Visualizer</h3>
+              <p>React, Chart.js</p>
+            </div>
+
+            <div class="project-card">
+              <h3>Todo App</h3>
+              <p>JavaScript</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section">
+        <div class="container">
+          <h2>Kỹ năng</h2>
+
+          <div class="grid grid-3">
+            <div class="skill">HTML/CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">React</div>
+            <div class="skill">Git</div>
+            <div class="skill">REST API</div>
+            <div class="skill">UI/UX</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section">
+        <div class="container">
+          <h2>Education</h2>
+          <p>HUFI - Công nghệ thông tin (2018 - 2022)</p>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Liên hệ</h2>
+          <p>Email: ban@example.com</p>
+          <p>GitHub: github.com/ban</p>
+        </div>
+      </section>
     </div>
-    <div class="project-card">
-      <h3>Todo App</h3>
-      <p>Ứng dụng quản lý công việc đơn giản với JavaScript thuần.</p>
-    </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills">
-    <h2>Kỹ năng</h2>
-    <ul>
-      <li>HTML5 / CSS3</li>
-      <li>JavaScript ES6+</li>
-      <li>Git / GitHub</li>
-    </ul>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Liên hệ</h2>
-    <p>Email: ban@example.com</p>
-    <p>GitHub: github.com/ban</p>
-  </section>
+  </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 - Portfolio của bạn</p>
-  </footer>
+  <script src="./scripts/main.js"></script>
+  <script src="./components/drag_side_bar/drag-nav.js"></script>
+
 </body>
+
 </html>

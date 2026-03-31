@@ -1,66 +1,121 @@
-/* Reset cơ bản */
+/* RESET */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-/* Font và màu nền */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
-}
-
-/* Header */
-header {
-  background: #333;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #111;
   color: #fff;
-  padding: 1rem;
+  overflow-x: hidden;
+  scroll-snap-type: y proximity;
 }
 
-header nav {
+/* SECTION */
+.section {
+  min-height: 100dvh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  scroll-snap-align: start;
 }
 
-header ul {
-  list-style: none;
-  display: flex;
+/* CONTAINER */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
-header ul li {
-  margin-left: 1rem;
+/* GRID */
+.grid {
+  display: grid;
+  gap: 24px;
 }
 
-header ul li a {
-  color: #fff;
+.grid-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+}
+
+.hero__content h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hero__content p {
+  opacity: 0.7;
+  margin-bottom: 24px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #00f0ff;
+  color: black;
+  border-radius: 6px;
   text-decoration: none;
 }
 
-/* Section */
-section {
-  padding: 2rem;
-  background: #fff;
-  margin: 1rem auto;
-  max-width: 800px;
-  border-radius: 8px;
+/* ABOUT */
+.about__image img {
+  width: 100%;
+  border-radius: 12px;
 }
 
-/* Project card */
+/* PROJECTS */
+.projects__wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;
+  gap: 20px;
+  overflow-x: auto;
+  padding-top: 20px;
+}
+
 .project-card {
-  background: #eaeaea;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-/* Footer */
-footer {
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+/* SKILLS */
+.skill {
+  background: #1c1c1c;
+  padding: 16px;
+  border-radius: 8px;
   text-align: center;
-  padding: 1rem;
-  background: #333;
-  color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .grid-1-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__content h1 {
+    font-size: 32px;
+  }
+
+ .container {
+    padding-left: 60px;
+  }
 }
