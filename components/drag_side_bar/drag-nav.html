@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Drag Nav Component</title>
+  <link rel="stylesheet" href="drag-nav.css" />
+</head>
+<body>
+
+  <!-- Drag Navigation Component -->
+  <div class="drag-nav drag-nav--dark" data-target="#main">
+    <div class="drag-nav__item" data-section="hero">Hero</div>
+    <div class="drag-nav__item" data-section="about">About</div>
+    <div class="drag-nav__item" data-section="projects">Projects</div>
+    <div class="drag-nav__item" data-section="skills">Skills</div>
+    <div class="drag-nav__item" data-section="education">Education</div>
+    <div class="drag-nav__item" data-section="contact">Contact</div>
+  </div>
+
+  <div class="drag-nav__trigger"></div>
+  <div class="drag-nav__hint">Hold & drag to navigate</div>
+
+  <!-- Main content -->
+  <main id="main">
+    <section id="hero">Hero</section>
+    <section id="about">About</section>
+    <section id="projects">Projects</section>
+    <section id="skills">Skills</section>
+    <section id="education">Education</section>
+    <section id="contact">Contact</section>
+  </main>
+
+  <script src="drag-nav.js"></script>
+</body>
+</html>
+
+
+
+
